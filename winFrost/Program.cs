@@ -16,7 +16,7 @@ namespace winFrost
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            
             if (args.Length > 0) {             Application.Run(new Form1()); }
             else { Application.Run(new SettingsForm()); }
         
