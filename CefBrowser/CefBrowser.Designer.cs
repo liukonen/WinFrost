@@ -1,4 +1,4 @@
-﻿namespace winFrost
+﻿namespace CefBrowser
 {
     partial class Form1
     {
@@ -6,7 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        private System.Windows.Forms.Panel BrowserDock;
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -48,14 +48,12 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-         
-            this.ResumeLayout(false);
 
+            this.ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel BrowserDock;
     }
 }
 

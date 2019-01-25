@@ -1,59 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-
 using CefSharp.WinForms;
 using CefSharp;
-
 using System.Threading.Tasks;
+using WinFrostShared;
 
-namespace winFrost
+namespace CefBrowser
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        String Url;
+        public Form1(string url)
         {
+            Url = url;
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
-            string[] args = System.Environment.GetCommandLineArgs();
-            string Url = args[args.Length - 1];
-
             CefSettings settings = new CefSettings { CachePath = Shared.CacheLocation, UserDataPath = Shared.DataPath };
-
             string plugins = (Shared.PluginsAllowed) ? "1" : "0";
-            
             settings.CefCommandLineArgs.Add("enable-npapi", plugins);
             settings.CefCommandLineArgs.Add("enable-widevine-cdm", plugins);
             CefSharp.Cef.Initialize(settings);
-
-
             ChromiumWebBrowser Browser = new ChromiumWebBrowser(Url) { Dock = DockStyle.Fill };
-
             if (File.Exists(Shared.GetIconLocation(Url))) { this.Icon = Shared.GetUrlIcon(Shared.GetIconLocation(Url)); }
             else { this.Icon = Shared.GetUrlIcon(string.Format("https://www.google.com/s2/favicons?domain={0}", Shared.GetBaseUrlName(Url))); }
-
-
             Browser.IsBrowserInitializedChanged += IsBrowserInitializedChanged;
             Browser.TitleChanged += OnBrowserTitleChanged;
-                        Browser.FrameLoadEnd += FrameLoadEndEvent;
+            Browser.FrameLoadEnd += FrameLoadEndEvent;
             this.Text = Browser.Text;
             BrowserDock.Controls.Add(Browser);
-            //Browser.ShowDevTools();
-
-
-            
-
-
-
         }
 
         private void FrameLoadEndEvent(object sender, FrameLoadEndEventArgs args)
@@ -71,7 +49,7 @@ namespace winFrost
                     {
                         first = html.Substring(html.IndexOf(Test, 0, StringComparison.OrdinalIgnoreCase));
                         string value2 = first.Substring(0, first.IndexOf(@""" ") - 1);
-                        this.Invoke((MethodInvoker)delegate { this.Icon =  Shared.GetUrlIcon(value2); });
+                        this.Invoke((MethodInvoker)delegate { this.Icon = Shared.GetUrlIcon(value2); });
                     }
 
                     else if (html.IndexOf(Test2, StringComparison.OrdinalIgnoreCase) > 0)
@@ -83,22 +61,16 @@ namespace winFrost
                 });
             }
         }
-
-
         private void IsBrowserInitializedChanged(object sender, IsBrowserInitializedChangedEventArgs args)
         {
             if (args.IsBrowserInitialized == true && Shared.DevToolsOn)
             {
-                 ((ChromiumWebBrowser)sender).ShowDevTools();
+                ((ChromiumWebBrowser)sender).ShowDevTools();
             }
         }
         private void OnBrowserTitleChanged(object sender, TitleChangedEventArgs args)
         {
             this.Invoke((MethodInvoker)delegate { this.Text = args.Title; });
         }
-
-
-
-
     }
 }

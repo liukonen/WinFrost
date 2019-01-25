@@ -35,15 +35,12 @@
             this.enableToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.disableToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.locationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.enableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.disableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.winFrostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.licenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cEFSharpEngineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miBrowserSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +50,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.showDevToolsOnLaunchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +69,6 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem,
-            this.exitToolStripMenuItem1,
             this.exitToolStripMenuItem2});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -92,47 +87,23 @@
             // enableToolStripMenuItem1
             // 
             this.enableToolStripMenuItem1.Name = "enableToolStripMenuItem1";
-            this.enableToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.enableToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.enableToolStripMenuItem1.Text = "Enable";
             this.enableToolStripMenuItem1.Click += new System.EventHandler(this.enableToolStripMenuItem1_Click);
             // 
             // disableToolStripMenuItem1
             // 
             this.disableToolStripMenuItem1.Name = "disableToolStripMenuItem1";
-            this.disableToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.disableToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.disableToolStripMenuItem1.Text = "Disable";
             this.disableToolStripMenuItem1.Click += new System.EventHandler(this.disableToolStripMenuItem1_Click);
             // 
             // locationToolStripMenuItem
             // 
             this.locationToolStripMenuItem.Name = "locationToolStripMenuItem";
-            this.locationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.locationToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.locationToolStripMenuItem.Text = "Location";
             this.locationToolStripMenuItem.Click += new System.EventHandler(this.locationToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem1
-            // 
-            this.exitToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.enableToolStripMenuItem,
-            this.disableToolStripMenuItem,
-            this.showDevToolsOnLaunchToolStripMenuItem});
-            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem1.Text = "Plugin Support";
-            // 
-            // enableToolStripMenuItem
-            // 
-            this.enableToolStripMenuItem.Name = "enableToolStripMenuItem";
-            this.enableToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.enableToolStripMenuItem.Text = "Enable";
-            this.enableToolStripMenuItem.Click += new System.EventHandler(this.enableToolStripMenuItem_Click);
-            // 
-            // disableToolStripMenuItem
-            // 
-            this.disableToolStripMenuItem.Name = "disableToolStripMenuItem";
-            this.disableToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.disableToolStripMenuItem.Text = "Disable";
-            this.disableToolStripMenuItem.Click += new System.EventHandler(this.disableToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem2
             // 
@@ -145,7 +116,8 @@
             // 
             this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.winFrostToolStripMenuItem,
-            this.cEFSharpEngineToolStripMenuItem});
+            this.cEFSharpEngineToolStripMenuItem,
+            this.miBrowserSettings});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
@@ -153,29 +125,30 @@
             // winFrostToolStripMenuItem
             // 
             this.winFrostToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.licenseToolStripMenuItem,
-            this.checkForUpdatesToolStripMenuItem});
+            this.licenseToolStripMenuItem});
             this.winFrostToolStripMenuItem.Name = "winFrostToolStripMenuItem";
-            this.winFrostToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.winFrostToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.winFrostToolStripMenuItem.Text = "WinFrost";
             // 
             // licenseToolStripMenuItem
             // 
             this.licenseToolStripMenuItem.Name = "licenseToolStripMenuItem";
-            this.licenseToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.licenseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.licenseToolStripMenuItem.Text = "License";
-            // 
-            // checkForUpdatesToolStripMenuItem
-            // 
-            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.checkForUpdatesToolStripMenuItem.Text = "Check for updates";
+            this.licenseToolStripMenuItem.Click += new System.EventHandler(this.licenseToolStripMenuItem_Click);
             // 
             // cEFSharpEngineToolStripMenuItem
             // 
             this.cEFSharpEngineToolStripMenuItem.Name = "cEFSharpEngineToolStripMenuItem";
-            this.cEFSharpEngineToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.cEFSharpEngineToolStripMenuItem.Text = "CEFSharp Engine";
+            this.cEFSharpEngineToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cEFSharpEngineToolStripMenuItem.Text = "Browser License";
+            this.cEFSharpEngineToolStripMenuItem.Click += new System.EventHandler(this.cEFSharpEngineToolStripMenuItem_Click);
+            // 
+            // miBrowserSettings
+            // 
+            this.miBrowserSettings.Name = "miBrowserSettings";
+            this.miBrowserSettings.Size = new System.Drawing.Size(180, 22);
+            this.miBrowserSettings.Text = "Browser Settings";
             // 
             // textBox2
             // 
@@ -260,13 +233,6 @@
             this.checkBox2.Text = "Auto Load Icon";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // showDevToolsOnLaunchToolStripMenuItem
-            // 
-            this.showDevToolsOnLaunchToolStripMenuItem.Name = "showDevToolsOnLaunchToolStripMenuItem";
-            this.showDevToolsOnLaunchToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.showDevToolsOnLaunchToolStripMenuItem.Text = "Show DevTools on Launch";
-            this.showDevToolsOnLaunchToolStripMenuItem.Click += new System.EventHandler(this.showDevToolsOnLaunchToolStripMenuItem_Click);
-            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,11 +274,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem winFrostToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem licenseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem checkForUpdatesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cEFSharpEngineToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem enableToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem disableToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -326,6 +288,6 @@
         private System.Windows.Forms.ToolStripMenuItem enableToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem disableToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem locationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem showDevToolsOnLaunchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miBrowserSettings;
     }
 }
