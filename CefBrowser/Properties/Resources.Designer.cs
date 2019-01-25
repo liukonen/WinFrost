@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace winFrost.Properties {
+namespace CefBrowser.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace winFrost.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("winFrost.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CefBrowser.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,18 +61,17 @@ namespace winFrost.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WinFrost MIT License
-        ///
-        ///Copyright (c) 2018
-        ///
-        ///Permission is hereby granted, free of charge, to any person obtaining a copy
-        ///of this software and associated documentation files (the &quot;Software&quot;), to deal
-        ///in the Software without restriction, including without limitation the rights
-        ///to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-        ///copies of the Software, and to permit persons to whom the Software is
-        ///furnished to do so, subject to the following conditions:
-        ///
-        ///The above copyright notic [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to // Copyright © 2010-2018 The CefSharp Authors. All rights reserved.
+        /////
+        ///// Redistribution and use in source and binary forms, with or without
+        ///// modification, are permitted provided that the following conditions are
+        ///// met:
+        /////
+        /////    * Redistributions of source code must retain the above copyright
+        /////      notice, this list of conditions and the following disclaimer.
+        /////
+        /////    * Redistributions in binary form must reproduce the above
+        /////      copyright notice, this list of conditions and the following  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string license {
             get {
