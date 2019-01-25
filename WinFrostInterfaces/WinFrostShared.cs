@@ -9,9 +9,9 @@ using System.Drawing;
 using System.Net;
 using System.IO; 
 
-namespace winFrost
+namespace WinFrostShared
 {
-    internal static class Shared
+    public static class Shared
     {
         public static string GetTitle(string html)
         {
@@ -90,6 +90,14 @@ namespace winFrost
             return new Bitmap(Image.FromStream(new MemoryStream(wc.DownloadData(IconLocation))));
 
         }
+
+        public static  string BrowserDll { get { return ReadSetting("browser"); } }
+
+        public static string ReadAppSetting(string setting)
+        { return ReadSetting(setting); }
+
+        public static void WriteAppSeting(string setting, string value)
+        { AddUpdateAppSettings(setting, value); }
 
 
         public static Boolean CacheEnabled
