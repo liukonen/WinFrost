@@ -1,0 +1,2 @@
+Geckofx is licensed under the Mozilla Public License Version.
+For more information, see: http://www.mozilla.org/foundation/licensing.html
