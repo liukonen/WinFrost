@@ -9,13 +9,15 @@ Inspired by former projects like Mozilla Prisim, and the current functionality f
     the program passed in with one command will rendor the browser form dynamicly linked at time of start up.
     
 
-# Ideas / Techmology used
+# Ideas / Technology used
 * Managed Extensibility Framework
 * Common Interfaces
 * Simple http request / response
 * configuration management
 * nuget
 * parse html file
+* GeckFX .net controls
+* CEFSharp .net controls
 
 # Screenshots
 ![settings](https://user-images.githubusercontent.com/28105142/52165916-7c2cb780-26cc-11e9-886c-56c229213255.png)
