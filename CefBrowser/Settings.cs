@@ -12,7 +12,7 @@ namespace CefBrowser
     {
         string url;
         public string License { get { return Properties.Resources.license; } }
-        public string Name { get { return string.Format("CefSharp- {0}", CefSharp.Cef.CefVersion); } }
+        public string Name { get { return string.Format("CefSharp- {1} - {0}", CefSharp.Cef.CefVersion, CefSharp.Cef.ChromiumVersion); } }
         public string version { get { return CefSharp.Cef.ChromiumVersion; } }
         string WinFrostBrowserInterface.LoadUrl { set { url = value; } }
         ToolStripItem[] WinFrostBrowserInterface.BrowserSettings { get { return Items(); } }
