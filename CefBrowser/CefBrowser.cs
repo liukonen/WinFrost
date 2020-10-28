@@ -27,11 +27,19 @@ namespace CefBrowser
             ChromiumWebBrowser Browser = new ChromiumWebBrowser(Url) { Dock = DockStyle.Fill };
             if (File.Exists(Shared.GetIconLocation(Url))) { this.Icon = Shared.GetUrlIcon(Shared.GetIconLocation(Url)); }
             else { this.Icon = Shared.GetUrlIcon(string.Format("https://www.google.com/s2/favicons?domain={0}", Shared.GetBaseUrlName(Url))); }
-            Browser.IsBrowserInitializedChanged += IsBrowserInitializedChanged;
+            Browser.IsBrowserInitializedChanged += Browser_IsBrowserInitializedChanged;//+= IsBrowserInitializedChanged;
             Browser.TitleChanged += OnBrowserTitleChanged;
             Browser.FrameLoadEnd += FrameLoadEndEvent;
             this.Text = Browser.Text;
             BrowserDock.Controls.Add(Browser);
+        }
+
+        private void Browser_IsBrowserInitializedChanged(object sender, EventArgs e)
+        {
+            if (((ChromiumWebBrowser)sender).IsBrowserInitialized == true && Shared.DevToolsOn)
+            {
+                ((ChromiumWebBrowser)sender).ShowDevTools();
+            }
         }
 
         private void FrameLoadEndEvent(object sender, FrameLoadEndEventArgs args)
@@ -61,13 +69,7 @@ namespace CefBrowser
                 });
             }
         }
-        private void IsBrowserInitializedChanged(object sender, IsBrowserInitializedChangedEventArgs args)
-        {
-            if (args.IsBrowserInitialized == true && Shared.DevToolsOn)
-            {
-                ((ChromiumWebBrowser)sender).ShowDevTools();
-            }
-        }
+
         private void OnBrowserTitleChanged(object sender, TitleChangedEventArgs args)
         {
             this.Invoke((MethodInvoker)delegate { this.Text = args.Title; });
