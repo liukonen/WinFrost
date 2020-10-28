@@ -61,9 +61,9 @@ namespace CefBrowser
                 });
             }
         }
-        private void IsBrowserInitializedChanged(object sender, IsBrowserInitializedChangedEventArgs args)
+        private void IsBrowserInitializedChanged(object sender, EventArgs args)
         {
-            if (args.IsBrowserInitialized == true && Shared.DevToolsOn)
+            if (((ChromiumWebBrowser)sender).IsBrowserInitialized == true && Shared.DevToolsOn)
             {
                 ((ChromiumWebBrowser)sender).ShowDevTools();
             }
