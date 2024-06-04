@@ -1,9 +1,8 @@
 # Note
-Due to the recent bug found in Chrome, CVE-2019-5786, I recomend not using the CEF or Master branch until CEFSharp can get its latest version up to at least the current verison. I will not be providing updates on the Nuget packages in my programs reliably, so it is up to you to keep your applications up to date.
-https://www.forbes.com/sites/daveywinder/2019/03/07/google-confirms-serious-chrome-security-problem-heres-how-to-fix-it/#7a5fb7e72002
+This depends on updates from 3rd party plugins (engines) and may not have the latest and greatest browsing experience. Meaning there may be zero-days that have not been patched. Use at your own risk!
 
 # WinFrost
-Inspired by former projects like Mozilla Prisim, and the current functionality found in Peppermint Linux, This is a Small Site Specific Browser application built on CEFSharp (main branch and CEFSharp Branch) (built on Google Chromium)  or, GeckoFX branch build on the GeckoFX browser (Mozilla's Engine). This gives the user a site specific browser link the user can use for web browsing.
+Inspired by former projects like Mozilla Prisim, and the current functionality found in Peppermint Linux, This is a Small Site Specific Browser application built on CEFSharp (main branch and CEFSharp Branch) (built on Google Chromium)  This gives the user a site-specific browser link the user can use for web browsing.
 
 # Compile Files
     Winfrost.sln (must use either x86 or x64 compile options, AnyCpu will not work for either project) 
