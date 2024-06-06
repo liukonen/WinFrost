@@ -19,7 +19,8 @@ namespace CefBrowser
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CefSettings settings = new CefSettings { CachePath = Shared.CacheLocation, UserDataPath = Shared.DataPath };
+            CefSettings settings = new CefSettings { CachePath = Shared.CacheLocation };//, UserDataPath = Shared.DataPath };
+            
             string plugins = (Shared.PluginsAllowed) ? "1" : "0";
             settings.CefCommandLineArgs.Add("enable-npapi", plugins);
             settings.CefCommandLineArgs.Add("enable-widevine-cdm", plugins);

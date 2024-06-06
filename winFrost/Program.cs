@@ -15,10 +15,11 @@ namespace winFrost
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            System.Reflection.Assembly browser = System.Reflection.Assembly.Load(System.IO.File.ReadAllBytes(WinFrostShared.Shared.BrowserDll));
-            Type WinFrostType = (from xx in browser.GetExportedTypes() where xx.GetInterface("WinFrostBrowserInterface") != null select xx).First();
-            dynamic WinItem = Activator.CreateInstance(WinFrostType);
-            WinFrostBrowserInterface I = (WinFrostBrowserInterface)WinItem;
+            //System.Reflection.Assembly browser = System.Reflection.Assembly.Load(System.IO.File.ReadAllBytes(WinFrostShared.Shared.BrowserDll));
+            //Type WinFrostType = (from xx in browser.GetExportedTypes() where xx.GetInterface("WinFrostBrowserInterface") != null select xx).First();
+            //dynamic WinItem = Activator.CreateInstance(WinFrostType);
+            //WinFrostBrowserInterface I = (WinFrostBrowserInterface)WinItem;
+            WinFrostBrowserInterface I = new CefBrowser.CefBrowser();
             if (args.Length > 0) { I.LoadUrl = args[0]; Application.Run(I.Browser); }
             else { Application.Run(new SettingsForm(I)); }
         }
