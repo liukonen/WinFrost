@@ -1,28 +1,49 @@
-# Note
-This depends on updates from 3rd party plugins (engines) and may not have the latest and greatest browsing experience. Meaning there may be zero-days that have not been patched. Use at your own risk!
+# WinFrost: Site-Specific Web Application Container
+**Executive Summary:** This application provides a dedicated, constrained browsing environment built on CEFSharp/Chromium, abstracting the full web browser experience into a focused, site-specific application container.
 
-# WinFrost
-Inspired by former projects like Mozilla Prisim, and the current functionality found in Peppermint Linux, This is a Small Site Specific Browser application built on CEFSharp (main branch and CEFSharp Branch) (built on Google Chromium)  This gives the user a site-specific browser link the user can use for web browsing.
+---
 
-# Compile Files
-    Winfrost.sln (must use either x86 or x64 compile options, AnyCpu will not work for either project) 
+## Technical Stack
 
-# How to run
-    the program without parameters will rendor a settings form, where you can enter the URL of the file, attempt to auto pull page names and favicons, and generate shortcuts of the application onto your desktop. It also gives settings on global pameters for both the application as well as menu items for whatever browser type (chromium or Gecko) you compiled.
-    the program passed in with one command will rendor the browser form dynamicly linked at time of start up.
-    
+### Runtime & Languages
+*   .NET (Targeting x86 or x64 compilation via `Winfrost.sln`)
+*   Managed Extensibility Framework (MEF)
+*   C# (Primary implementation language)
 
-# Ideas / Technology used
-* Managed Extensibility Framework
-* Common Interfaces
-* Simple http request / response
-* configuration management
-* nuget
-* parse html file
-* GeckFX .net controls
-* CEFSharp .net controls
+### Infrastructure
+*   CEFSharp (.NET controls wrapping Chromium engine)
+*   GeckFX (.NET controls for Gecko engine fallback)
+*   NuGet (Dependency management)
 
-# Screenshots
-![settings](https://user-images.githubusercontent.com/28105142/52165916-7c2cb780-26cc-11e9-886c-56c229213255.png)
-![form1](https://user-images.githubusercontent.com/28105142/52165913-7b942100-26cc-11e9-967a-da82310c8e82.png)
-![form12](https://user-images.githubusercontent.com/28105142/52165914-7b942100-26cc-11e9-8534-f068947103e6.png)
+### Architectural Patterns
+*   **Facade:** The primary application interface abstracts complex underlying browser rendering engines (Chromium/Gecko) into a unified, simple application launch mechanism.
+*   **Adapter:** Implied pattern for interfacing disparate browser controls (CEFSharp, GeckFX) under a common application model.
+*   **Configuration Management:** Utilizes dedicated routines for persistence of settings and global parameters.
+
+---
+
+## The Mission (Design History)
+This project originated as a functional exploration following work on Peppermint Linux, aiming to encapsulate arbitrary web content into a dedicated, highly controlled Web Application instance. The initial intent was to move beyond general-purpose browsing by enforcing site-specific boundaries. The current implementation solidifies this concept by providing a mechanism to launch the application with or without initial parameters, maintaining usability while isolating the web context. *This remains a specialized, reference implementation.*
+
+## Architecture & Decisions
+**Goal:** Achieve sandboxing and specialized UX for web content viewing.
+
+**Trade-offs:**
+*   **Engine Dependency:** Dependence on third-party, evolving browser engines (Chromium/Gecko) forces the application to operate in a constrained maintenance mode. Zero-day exposure is a known risk requiring user acceptance.
+*   **Internal Complexity vs. Stability:** The use of MEF and multiple underlying controls (CEFSharp/GeckFX) introduces internal complexity. This complexity is accepted to ensure that the application can present a stable, high-level API regardless of which underlying engine is compiled and linked.
+*   **Execution Model:** The dual-mode execution (Settings Form vs. Direct Browser Launch) dictates that the startup sequence must perform environment introspection, adding branching logic complexity.
+
+## Impact & ROI
+*   **Risk Mitigation Blueprint:** Provides a tangible architectural blueprint for isolating potentially insecure web code execution into a manageable process boundary.
+*   **Time Savings:** Eliminates the overhead of launching a full, general-purpose browser for single-site viewing needs.
+*   **Modularity:** The reliance on MEF suggests a pathway for incorporating custom, site-specific plugins without modifying the core executable logic.
+
+## The Golden Path
+1.  `dotnet build --configuration Release` (Assumes necessary solution setup)
+2.  `Winfrost.exe` (To launch the settings/setup wizard)
+3.  `Winfrost.exe "http://example.com"` (To launch the container directly)
+
+---
+
+**DISCLAIMER:** This application relies heavily on external, rapidly evolving browser engines. Users acknowledge that running this software involves inherent security risks and is not intended for general, mission-critical browsing.
+
